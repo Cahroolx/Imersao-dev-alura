@@ -1,8 +1,3 @@
-/* ============================================
-   CORINTHIANS - UMA VIAGEM NO TEMPO
-   JavaScript - Lógica Interativa
-   ============================================ */
-
 // Elementos do DOM
 const navLinks = document.querySelectorAll('.nav-link');
 const progressBar = document.getElementById('progressBar');
@@ -207,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveNav();
     
     // Log de inicialização
-    console.log('🔴⚪ Corinthians - Uma Viagem no Tempo');
+    console.log('Corinthians - Uma Viagem no Tempo');
     console.log('Site carregado com sucesso!');
 });
 
