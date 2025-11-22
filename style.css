@@ -1,0 +1,881 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   ESTILIZAÇÃO DA BARRA DE ROLAGEM
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fbbf24;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+}
+
+/* ============================================
+   DEFINIÇÃO DAS ANIMAÇÕES (KEYFRAMES)
+   ============================================ */
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scale-up {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes pulse-subtle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce-gentle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes parallax-float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Classes utilitárias para aplicar as animações */
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out forwards;
+}
+
+.animate-scale-up {
+    animation: scale-up 0.6s ease-out forwards;
+}
+
+/* A classe .animate-shimmer foi removida pois o efeito foi aplicado diretamente no .hero-title */
+
+.animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+}
+
+.animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* ============================================
+   BARRA DE NAVEGAÇÃO
+   ============================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.brand-title {
+    color: #fbbf24;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fbbf24;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    transition: width 0.3s ease;
+}
+
+/* ============================================
+   ESTILOS GERAIS DAS SEÇÕES
+   ============================================ */
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+/* ============================================
+   SEÇÃO DE DESTAQUE (HERO)
+   ============================================ */
+
+.hero-section {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    position: relative;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.1;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: #fbbf24;
+    top: 5%;
+    right: 0;
+    animation: parallax-float 6s ease-in-out infinite;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: #fbbf24;
+    bottom: 0;
+    left: 0;
+    animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: #fbbf24;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate-slow 20s linear infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+
+    /* Efeito de gradiente no texto */
+    background: linear-gradient(135deg, #f59e0b, #fbbf24, #fde68a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Efeito de brilho (glow) com múltiplas sombras de texto */
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.3), 0 0 25px rgba(245, 158, 11, 0.2);
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    color: #fbbf24;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background: #fbbf24;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: #f59e0b;
+    transform: scale(1.05);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+}
+
+.scroll-arrow {
+    font-size: 1.5rem;
+    color: #fbbf24;
+}
+
+/* ============================================
+   SEÇÃO DE ÍDOLOS
+   ============================================ */
+
+.idols-section {
+    background: linear-gradient(180deg, #000 0%, #1a1a1a 50%, #0d0d0d 100%);
+    border-top: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.idols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.idol-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(251, 191, 36, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.idol-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(251, 191, 36, 0.5);
+    box-shadow: 0 20px 40px rgba(251, 191, 36, 0.15);
+}
+
+.idol-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.idol-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.idol-card:hover .idol-image img {
+    transform: scale(1.1);
+}
+
+.idol-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease;
+}
+
+.idol-card:hover::before {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.idol-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.idol-description {
+    color: #999;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.idol-tags {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.4rem 0.8rem;
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ============================================
+   SEÇÃO DA ARENA CORINTHIANS
+   ============================================ */
+
+.arena-section {
+    background: linear-gradient(180deg, #0d0d0d 0%, #000 50%, #1a1a1a 100%);
+    border-top: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.arena-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.arena-image {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 400px;
+}
+
+.arena-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arena-info h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.arena-info p {
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.arena-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.detail-item h4 {
+    color: #fbbf24;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-item p {
+    color: #999;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .arena-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .arena-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   SEÇÃO DE TÍTULOS
+   ============================================ */
+
+.titles-section {
+    background: linear-gradient(180deg, #1a1a1a 0%, #000 50%, #0d0d0d 100%);
+    border-top: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.titles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.title-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.title-card:hover {
+    border-color: rgba(251, 191, 36, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(251, 191, 36, 0.15);
+}
+
+.title-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.title-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-content {
+    padding: 1.5rem;
+}
+
+.title-content h3 {
+    color: #fbbf24;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-content p {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.title-detail {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.titles-summary {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.titles-summary h3 {
+    font-size: 1.8rem;
+    color: #fbbf24;
+    margin-bottom: 2rem;
+}
+
+.titles-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+.titles-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.title-category {
+    margin-bottom: 2rem;
+}
+
+.title-category:last-child {
+    margin-bottom: 0;
+}
+
+.title-category h4 {
+    font-size: 1.5rem;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.title-category ul li {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    list-style-position: inside;
+}
+/* ============================================
+   SEÇÃO DE HISTÓRIA (LINHA DO TEMPO)
+   ============================================ */
+
+.history-section {
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 50%, #000 100%);
+    border-top: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.timeline-year {
+    text-align: center;
+}
+
+.year-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-year p {
+    color: #999;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 4px solid #fbbf24;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background: rgba(251, 191, 36, 0.05);
+    border-left-color: #f59e0b;
+}
+
+.timeline-content h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #999;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-year {
+        text-align: left;
+    }
+}
+
+/* ============================================
+   RODAPÉ
+   ============================================ */
+
+.footer {
+    background: #000;
+    border-top: 1px solid rgba(251, 191, 36, 0.2);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+/* ============================================
+   SEÇÃO DE MANDAMENTOS
+   ============================================ */
+
+.commandments-section {
+    background: linear-gradient(180deg, #000 0%, #1a1a1a 50%, #000 100%);
+    border-top: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.commandments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.commandment-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(251, 191, 36, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.commandment-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(251, 191, 36, 0.4);
+}
+
+.commandment-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+}
+
+.commandment-text {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.footer p {
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+.footer-subtitle {
+    font-size: 0.9rem;
+}
+
+.culture-section p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+/* ============================================
+   AJUSTES DE RESPONSIVIDADE (MEDIA QUERIES)
+   ============================================ */
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .idols-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .titles-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        font-size: 0.7rem;
+    }
+}

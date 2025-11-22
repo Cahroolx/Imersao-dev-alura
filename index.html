@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corinthians - Uma Viagem no Tempo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <span class="brand-title">CORINTHIANS</span>
+                </div>
+                
+                <!-- Section Navigation -->
+                <div class="nav-links">
+                    <button class="nav-link active" data-section="0">Início</button>
+                    <button class="nav-link" data-section="1">Ídolos</button>
+                    <button class="nav-link" data-section="2">Arena</button>
+                    <button class="nav-link" data-section="3">Títulos</button>
+                    <button class="nav-link" data-section="4">A Fiel</button>
+                    <button class="nav-link" data-section="5">Cultura</button>
+                    <button class="nav-link" data-section="6">Feminino</button>
+                    <button class="nav-link" data-section="7">Mandamentos</button>
+                    <button class="nav-link" data-section="8">História</button>
+                </div>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="progress-bar" id="progressBar"></div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="section hero-section" data-section="0">
+            <div class="hero-background">
+                <div class="hero-blob blob-1"></div>
+                <div class="hero-blob blob-2"></div>
+                <div class="hero-blob blob-3"></div>
+            </div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">CORINTHIANS</h1>
+                <p class="hero-subtitle animate-slide-in-right">Uma Viagem no Tempo</p>
+                <p class="hero-description animate-slide-in-left">
+                    Explore a história, os ídolos e as glórias do maior clube do Brasil
+                </p>
+                
+                <button class="cta-button animate-scale-up" onclick="scrollToSection(1)">
+                    Comece a Jornada
+                </button>
+            </div>
+
+        </section> 
+        <main>
+
+        <!-- Idols Section -->
+        <section class="section idols-section" data-section="1">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">ALGUNS DOS ÍDOLOS</h2>
+                    <p class="section-subtitle">Conheça alguns dos maiores jogadores da história corinthiana</p>
+                </div>
+
+                <div class="idols-grid">
+                    <!-- Sócrates -->
+                    <div class="idol-card animate-fade-in-up" style="animation-delay: 0s">
+                        <div class="idol-image">
+                            <img src="images/idol_socrates.jpg" alt="Sócrates">
+                        </div>
+                        <h3 class="idol-name">Sócrates</h3>
+                        <p class="idol-description">
+                            Gênio, líder, filósofo da bola. Comandou a Democracia Corinthiana e marcou o clube com elegância e consciência.
+                        </p>
+                        <div class="idol-tags">
+                            <span class="tag">Meio-campo</span>
+                            <span class="tag">1980</span>
+                        </div>
+                    </div>
+
+                    <div class="idol-card animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="idol-image">
+                            <img src="images/idol_cassio.jpg" alt="Cássio">
+                        </div>
+                        <h3 class="idol-name">Cássio</h3>
+                        <p class="idol-description">
+                            Guardião eterno da meta alvinegra. Herói da Libertadores e do Mundial de 2012, símbolo de grandeza e resistência.
+                        </p>
+                        <div class="idol-tags">
+                            <span class="tag">Goleiro</span>
+                            <span class="tag">2000</span>
+                        </div>
+                    </div>
+
+                    <div class="idol-card animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="idol-image">
+                            <img src="images/idol_emerson.jpg" alt="Emerson Sheik">
+                        </div>
+                        <h3 class="idol-name">Emerson Sheik</h3>
+                        <p class="idol-description">
+                            Dois gols na final da Liberta. Um louco oficial da Fiel. Virou mito pra sempre.
+                        </p>
+                        <div class="idol-tags">
+                            <span class="tag">Ponta-esquerda</span>
+                            <span class="tag">2000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arena Section -->
+        <section class="section arena-section" data-section="2">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">A ARENA</h2>
+                    <p class="section-subtitle">Neo Química Arena - O templo do Corinthians</p>
+                </div>
+
+                <div class="arena-content">
+                    <div class="arena-image animate-slide-in-left">
+                        <img src="images/arena_modern.jpg" alt="Neo Química Arena">
+                    </div>
+
+                    <div class="arena-info animate-slide-in-right">
+                        <h3>Neo Química Arena</h3>
+                        <p>
+                            Inaugurada em 2014, a Neo Química Arena é o estádio moderno do Corinthians. Com capacidade para mais de 49 mil torcedores, é um dos estádios mais modernos do Brasil e do mundo.
+                        </p>
+                        
+                        <div class="arena-details">
+                            <div class="detail-item">
+                                <h4>Capacidade</h4>
+                                <p>49.905 torcedores</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Localização</h4>
+                                <p>São Paulo, Brasil</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Inauguração</h4>
+                                <p>10 de maio de 2014</p>
+                            </div>
+                        </div>
+
+                        <a href="https://www.neoquimicaarena.com.br/sobre/historia" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Titles Section -->
+        <section class="section titles-section" data-section="3">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">GALERIA DE TÍTULOS</h2>
+                    <p class="section-subtitle">Todas as conquistas oficiais do Timão</p>
+                </div>
+
+                <div class="titles-container animate-fade-in-up">
+                    <div class="title-category">
+                        <h4>Mundiais</h4>
+                        <ul>
+                            <li><strong>Copa do Mundo de Clubes da FIFA (2):</strong> 2000, 2012</li>
+                        </ul>
+                    </div>
+                    <div class="title-category">
+                        <h4>Continentais</h4>
+                        <ul>
+                            <li><strong>Copa Libertadores da América (1):</strong> 2012 (Invicto)</li>
+                            <li><strong>Recopa Sul-Americana (1):</strong> 2013</li>
+                        </ul>
+                    </div>
+                    <div class="title-category">
+                        <h4>Nacionais</h4>
+                        <ul>
+                            <li><strong>Campeonato Brasileiro (7):</strong> 1990, 1998, 1999, 2005, 2011, 2015, 2017</li>
+                            <li><strong>Copa do Brasil (3):</strong> 1995, 2002, 2009</li>
+                            <li><strong>Supercopa do Brasil (1):</strong> 1991</li>
+                            <li><strong>Campeonato Brasileiro - Série B (1):</strong> 2008</li>
+                        </ul>
+                    </div>
+                    <div class="title-category">
+                        <h4>Interestaduais</h4>
+                        <ul>
+                            <li><strong>Torneio Rio-São Paulo (5):</strong> 1950, 1953, 1954, 1966, 2002</li>
+                        </ul>
+                    </div>
+                    <div class="title-category">
+                        <h4>Estaduais</h4>
+                        <ul>
+                            <li><strong>Campeonato Paulista (31):</strong> 1914, 1916, 1922, 1923, 1924, 1928, 1929, 1930, 1937, 1938, 1939, 1941, 1951, 1952, 1954, 1977, 1979, 1982, 1983, 1988, 1995, 1997, 1999, 2001, 2003, 2009, 2013, 2017, 2018, 2019, 2025</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fans Section -->
+        <section class="section fans-section" data-section="4">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">A FIEL TORCIDA</h2>
+                    <p class="section-subtitle">O maior patrimônio do clube</p>
+                </div>
+
+                <!-- A Fiel -->
+                <div class="arena-content" style="margin-bottom: 4rem;">
+                    <div class="arena-image animate-slide-in-left">
+                        <img src="images/images_fiel_torcida.jpg" alt="Fiel Torcida">
+                    </div>
+                    <div class="arena-info animate-slide-in-left">
+                        <h3>A Nação Corinthiana</h3>
+                        <p style="text-align: justify;">
+                            Conhecida como "Fiel", a torcida do Corinthians é reconhecida como uma das maiores e mais apaixonadas torcidas do futebol mundial. Ela representa o espírito do Corinthians dentro e fora de campo: lealdade, intensidade e apoio incondicional. Independente da fase do time, a Fiel está presente, criando um ambiente único e transformando jogos em verdadeiros espetáculos. O envolvimento da torcida vai muito além das arquibancadas, fazendo dela um dos pilares mais importantes da história e da identidade do clube
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gaviões da Fiel -->
+                <div class="arena-content">
+                    <div class="arena-info animate-slide-in-left">
+                        <h3>Gaviões da Fiel</h3>
+                        <p style="text-align: justify;">
+                            Fundada em 1969, a Gaviões da Fiel é a maior torcida organizada do Corinthians. Surgiu com o objetivo de apoiar o clube e também atuar como um movimento social, representando a voz do torcedor. A Gaviões se destaca tanto no futebol quanto no Carnaval paulista, onde possui uma das escolas de samba mais tradicionais e premiadas do país. Sua presença nos estádios é marcada por bandeirões, bateria, festas e cânticos que impulsionam o time e simbolizam a união da nação corinthiana.
+                        </p>
+                        <a href="https://www.gavioes.com.br/" target="_blank" rel="noopener noreferrer" class="cta-button">Conheça os Gaviões</a>
+                    </div>
+                    <div class="arena-image animate-slide-in-right">
+                        <img src="images/images_gavioes_da_fiel.jpg" alt="Gaviões da Fiel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultura Section -->
+        <section class="section culture-section" data-section="5">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">CORINTHIANS NA CULTURA</h2>
+                    <p class="section-subtitle">Mais que um time: um fenômeno que inspira arte, moda e atitude</p>
+                </div>
+
+                <div class="arena-content" style="margin-bottom: 4rem;">
+                    <div class="arena-info animate-slide-in-left">
+                        <h3>Onde o Jogo Encontra a Rua</h3> 
+                        <p style="text-align: justify;">
+                            Antes mesmo de dominar as redes, o Corinthians já era um movimento cultural. O clube ultrapassou os limites do futebol e se transformou em código, estética e atitude. O preto e branco deixou de ser apenas a cor de um time para virar estilo de vida, identidade pulsante nas ruas, nos fones de ouvido e na forma como milhões se expressam. Ser Corinthians é pertencer a algo maior: é viver uma cultura que vai além das quatro linhas.
+                        </p>
+                    </div>
+                    <div class="arena-image animate-slide-in-right">
+                        <img src="images/culture_lifestyle.jpg" alt="Jovens na rua com a camisa do Corinthians, representando o lifestyle">
+                    </div>
+                </div>
+
+                <div class="idols-grid">
+                    <div class="idol-card animate-fade-in-up" style="animation-delay: 0s;">
+                        <div class="idol-image">
+                            <img src="images/culture_music.jpg" alt="MC Hariel e Memphis">
+                        </div>
+                        <h3 class="idol-name">A Batida da Quebrada</h3>
+                        <p class="idol-description">
+                            O Corinthians é o beat do funk e do trap paulista. Artistas como MC Hariel e Memphis transformam a camisa em símbolo de vitória e identidade.
+                        </p>
+                    </div>
+                    <div class="idol-card animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="idol-image">
+                            <img src="images/culture_fashion.jpg" alt="Pessoas usando a camisa do Corinthians como item de moda">
+                        </div>
+                        <h3 class="idol-name">Estética e Identidade</h3>
+                        <p class="idol-description">
+                            O manto alvinegro é um manifesto. Das camisas icônicas aos grafites, a estética corinthiana é um símbolo de resistência, orgulho e pertencimento.
+                        </p>
+                    </div>
+                    <div class="idol-card animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="idol-image">
+                            <img src="images/culture_internet.jpg" alt="Meme famoso da internet relacionado ao Corinthians">
+                        </div>
+                        <h3 class="idol-name">Ícone que Transcende</h3>
+                        <p class="idol-description">
+                            Na internet, a Fiel marca presença com memes, posts e conteúdos que viralizam, mostrando a força da torcida de um jeito leve e criativo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Feminino Section -->
+        <section class="section feminino-section" data-section="6">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">CORINTHIANS FEMININO</h2>
+                    <p class="section-subtitle">As Brabas que dominam o continente</p>
+                </div>
+
+                <div class="arena-content">
+                    <div class="arena-info animate-slide-in-left">
+                        <h3>As Brabas</h3>
+                        <p style="text-align: justify;">
+                            O time feminino do Corinthians, conhecido como "As Brabas", é uma potência no futebol sul-americano. Com um histórico de títulos impressionante, incluindo múltiplos Campeonatos Brasileiros e Copas Libertadores, a equipe se tornou sinônimo de excelência, garra e talento. Elas não apenas colecionam troféus, mas também inspiram uma nova geração de atletas e torcedores, consolidando o nome do Corinthians como uma força dominante no futebol feminino.
+                            E tem o mais lindo: elas carregam o mesmo espírito de luta do clube, só que com uma modernidade afiada. Representam a quebrada, a força da mulher no esporte e a evolução do futebol brasileiro.
+                            Quem vê o Corinthians Feminino jogar entende rápido: ali não é só um time… é um manifesto brilhando em preto e branco.
+                        </p>
+                        <a href="https://www.meutimao.com.br/corinthians-feminino/" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais</a>
+                    </div>
+                    <div class="arena-image animate-slide-in-right">
+                        <img src="images/corinthians_feminino.jpg" alt="Time do Corinthians Feminino comemorando título">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commandments Section -->
+        <section class="section commandments-section" data-section="7">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">OS 10 MANDAMENTOS CORINTHIANOS</h2>
+                    <p class="section-subtitle">Os chamados “Mandamentos Corinthianos” representam princípios simbólicos que reforçam o espírito do clube e de sua torcida. Mais do que regras, são valores que definem o que significa ser Corinthians. Entre esses pilares, destacam-se os mandamentos que expressam a essência do sentimento alvinegro:</p>
+                </div>
+
+                <div class="commandments-grid">
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0s;">
+                        <div class="commandment-number">1</div>
+                        <p class="commandment-text">"Amar o Corinthians acima de qualquer resultado, partida e jogador."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="commandment-number">2</div>
+                        <p class="commandment-text">"Nada é mais importante do que o jogo do Corinthians."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="commandment-number">3</div>
+                        <p class="commandment-text">"Aqui é Corinthians. Aqui é na raça."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="commandment-number">4</div>
+                        <p class="commandment-text">"A Fiel não vaia. A Fiel apoia os 90 minutos."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="commandment-number">5</div>
+                        <p class="commandment-text">"Nossas glórias mil são contra tudo e contra todos."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.5s;">
+                        <div class="commandment-number">6</div>
+                        <p class="commandment-text">"O bando grita mais forte quando o Timão está perdendo."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="commandment-number">7</div>
+                        <p class="commandment-text">"Sofredor hoje. Sofredor amanhã. Sofredor pra sempre. Graças a Deus."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.7s;">
+                        <div class="commandment-number">8</div>
+                        <p class="commandment-text">"Este time só tem um dono. Este time é do povo."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.8s;">
+                        <div class="commandment-number">9</div>
+                        <p class="commandment-text">"Eu nunca vou te abandonar. Porque eu te amo."</p>
+                    </div>
+                    <div class="commandment-card animate-fade-in-up" style="animation-delay: 0.9s;">
+                        <div class="commandment-number">10</div>
+                        <p class="commandment-text">"Vai, Corinthians!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="section history-section" data-section="8">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">HISTÓRIA</h2>
+      <p class="section-subtitle">Mais de 110 anos de tradição e paixão</p>
+    </div>
+
+    <div class="timeline">
+      <!-- 1910 -->
+      <div class="timeline-item animate-slide-in-left" style="animation-delay: 0s">
+        <div class="timeline-year">
+          <div class="year-number">1910</div>
+          <p>Fundação</p>
+        </div>
+        <div class="timeline-content">
+          <h3>Os Primeiros Anos</h3>
+          <p>Fundado em 1 de setembro de 1910 à luz de um lampião no Bom Retiro, operários criaram o Sport Club Corinthians Paulista, o time que nasceu do povo e para o povo.</p>
+        </div>
+      </div>
+
+      <!-- 1914 -->
+      <div class="timeline-item animate-slide-in-left" style="animation-delay: 0s">
+        <div class="timeline-year">
+          <div class="year-number">1914</div>
+          <p>Campeonato Paulista</p>
+        </div>
+        <div class="timeline-content">
+          <h3>Primeiro título</h3>
+          <p>Esse foi o marco zero da história campeã do Timão. O time ainda era bem jovem, criado em 1910, mas já chegou com aquela energia de “não vim pra brincar”, Corinthians atropelou geral na Liga Paulista de Foot-Ball e levantou seu primeiro troféu oficial.</p>
+        </div>
+      </div>
+
+      <!--1976-->
+       <div class="timeline-item animate-slide-in-right" style="animation-delay: 0.2s">
+        <div class="timeline-year">
+          <div class="year-number">1976</div>
+          <p>Invasão Corinthiana</p>
+        </div>
+        <div class="timeline-content">
+          <h3>70 mil Corinthianos</h3>
+          <p>Mais de 70 mil loucos pelo Timão atravessaram o país e tomaram o Maracanã. É lembrado como o maior deslocamento humano em paz.</p>
+        </div>
+      </div>
+      <!-- 1980 -->
+      <div class="timeline-item animate-slide-in-right" style="animation-delay: 0.2s">
+        <div class="timeline-year">
+          <div class="year-number">1980</div>
+          <p>Democracia Corinthiana</p>
+        </div>
+        <div class="timeline-content">
+          <h3>A Revolução dos Jogadores</h3>
+          <p>Nos anos 80, o Corinthians viveu a fase da Democracia Corinthiana, com Sócrates, Casagrande e outros jogadores que transformaram o futebol e a política do clube.</p>
+        </div>
+      </div>
+
+      <!-- 1990 -->
+      <div class="timeline-item animate-slide-in-right" style="animation-delay: 0.2s">
+        <div class="timeline-year">
+          <div class="year-number">1990</div>
+          <p>Brasileirão</p>
+        </div>
+        <div class="timeline-content">
+          <h3>Primeiro título Brasileirão</h3>
+          <p>O primeiro título no Brasileirão. Comandado por Neto, o Corinthians superou o São Paulo na final e pintou o Brasil de preto e branco.</p>
+        </div>
+      </div>
+
+    <!-- 1997 -->
+      <div class="timeline-item animate-slide-in-right" style="animation-delay: 0.2s">
+        <div class="timeline-year">
+          <div class="year-number">1997</div>
+          <p>Feminino</p>
+        </div>
+        <div class="timeline-content">
+          <h3>Fundação do Corinthians Feminino</h3>
+          <p>O time feminino do Corinthians foi fundado em 1997 e se tornaria, anos depois, uma potência mundial. As Brabas construíram uma era de conquistas históricas, elevando o clube a um novo patamar no futebol feminino.</p>
+        </div>
+      </div>
+
+      <!-- 2000 -->
+      <div class="timeline-item animate-slide-in-left" style="animation-delay: 0.4s">
+        <div class="timeline-year">
+          <div class="year-number">2000</div>
+          <p>Mundial</p>
+        </div>
+        <div class="timeline-content">
+          <h3>Conquista Mundial</h3>
+          <p>No ano 2000, o Corinthians conquistou seu primeiro Mundial de Clubes da FIFA, consolidando-se como gigante também fora do Brasil.</p>
+        </div>
+      </div>
+
+      <!-- 2012 -->
+      <div class="timeline-item animate-slide-in-right" style="animation-delay: 0.6s">
+        <div class="timeline-year">
+          <div class="year-number">2012</div>
+          <p>Ano Perfeito</p>
+        </div>
+        <div class="timeline-content">
+          <h3>Libertadores + Mundial</h3>
+          <p>2012 foi um ano mítico: o Corinthians conquistou a Libertadores, de forma invicta, venceu o Mundial de Clubes da FIFA e ainda protagonizou um dos maiores deslocamentos de torcida da história, levando a Fiel em massa ao Japão </p>
+        </div>
+      </div>
+       
+       <!-- 2014 -->
+      <div class="timeline-item animate-slide-in-left" style="animation-delay: 0.4s">
+        <div class="timeline-year">
+          <div class="year-number">2014</div>
+          <p>Estádio Própio</p>
+        </div>
+        <div class="timeline-content">
+          <h3>Neo Quimica Arena</h3>
+          <p>A construção da nossa casa, A Neo Química Arena nasceu em 2014, ergueu o orgulho do povo e virou o templo moderno onde a Fiel faz tremer até concreto.</p>
+        </div>
+      </div>
+
+       <!-- 2025 -->
+      <div class="timeline-item animate-slide-in-left" style="animation-delay: 0.4s">
+        <div class="timeline-year">
+          <div class="year-number">2025</div>
+          <p>Paulistão</p>
+        </div>
+        <div class="timeline-content">
+          <h3>Corinthians de volta</h3>
+          <p>O Corinthians voltou a mandar no território paulista em 2025. Time encaixado, pressão da Fiel e decisão jogada com sangue no olho. Encarou o maior rival sem tremer e levantou a taça na raça, no grito, no peso da camisa. O troféu voltou pra Itaquera e o Timão reafirmou quem é que manda no estado. Sem firula, só Corinthians sendo Corinthians.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Corinthians - Uma Viagem no Tempo</p>
+    <p class="footer-subtitle">Celebrando mais de 110 anos de história, tradição e paixão</p>
+  </div>
+</footer>
+
+<script>
+    // Função para rolar suavemente para uma seção
+    function scrollToSection(sectionIndex) {
+        const section = document.querySelector(`.section[data-section="${sectionIndex}"]`);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+        const progressBar = document.getElementById('progressBar');
+
+        // Adiciona o evento de clique para os botões de navegação
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const sectionIndex = link.getAttribute('data-section');
+                scrollToSection(sectionIndex);
+            });
+        });
+
+        // Função para atualizar o link ativo e a barra de progresso no scroll
+        function onScroll() {
+            // Atualiza a barra de progresso
+            const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / scrollTotal) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            // Atualiza o link ativo
+            let currentSectionIndex = 0;
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                // Subtrai um pouco para ativar o link um pouco antes de chegar no topo da seção
+                if (scrolled >= sectionTop - 100) { 
+                    currentSectionIndex = index;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') == currentSectionIndex) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Adiciona o listener de scroll na janela
+        window.addEventListener('scroll', onScroll);
+
+        // Executa a função uma vez para definir o estado inicial
+        onScroll();
+    });
+</script>
+
+</body>
+</html>
